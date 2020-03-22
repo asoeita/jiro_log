@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+body {
+  padding-top: 56px;
+}
+
+.navbar-dark .navbar-brand {
+  color: #000000;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(0, 0, 0);
+}
+
+.bg-dark {
+  background-color: #fed500 !important;
+}
+
+.row{
+  margin-top: 40px;
+}
+
+.like-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 25px;
+  color: #808080;
+  margin-left: 0px;
+  float: left;
+}
+
+.card-title {
+  margin-bottom: 0px;
+  padding: 15px;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.card-footer {
+  background-color: white;
+  border-top: 0px;
+}
+
+.text-white {
+  color: #000000 !important;
+}
+
+.pagination{
+  margin-left: auto;
+  margin-right: auto;
+}
