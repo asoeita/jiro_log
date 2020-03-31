@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_22_112329) do
+ActiveRecord::Schema.define(version: 2020_03_31_122303) do
+
+  create_table "jiros", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "store_id"
+    t.string "picture"
+    t.string "weather"
+    t.datetime "date"
+    t.integer "waiting_time"
+    t.string "call"
+    t.string "pork"
+    t.string "soup"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
