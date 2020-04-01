@@ -1,0 +1,2 @@
+class Jiro < ApplicationRecord
+end

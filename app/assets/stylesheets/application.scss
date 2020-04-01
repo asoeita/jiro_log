@@ -10,12 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
 
 body {
   padding-top: 56px;
@@ -67,4 +66,22 @@ body {
 .pagination{
   margin-left: auto;
   margin-right: auto;
+}
+
+// ログイン画面
+
+.container-login {
+  @extend .container-fluid;
+  max-width: 576px;
+  padding: 2rem;
+}
+
+// 「ログインしました」などのフラッシュ用スタイル
+
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
 }
