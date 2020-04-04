@@ -20,6 +20,10 @@ body {
   padding-top: 56px;
 }
 
+.navbar-brand{
+  font-size: 30px;
+}
+
 .navbar-dark .navbar-brand {
   color: #000000;
 }
@@ -84,4 +88,74 @@ body {
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+
+table{
+  width: 50%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 30px auto;
+}
+
+table th,table td{
+  padding: 10px 0;
+  text-align: center;
+}
+
+table tr:nth-child(odd){
+  background-color: #eee
+}
+
+/* ユーザー詳細画面 */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 2.3em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.btn.btn-primary.btn-outline-primary.btn-round {
+  float: right;
+}
+
+hr {
+  margin-bottom: 0;
+}
+
+.col-md-4.select-bar {
+  text-align: center;
+}
+
+.row.select-bar{
+  margin-top: 5px;
 }
