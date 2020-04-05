@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+
+    <%= form_for current_user, url: {action: 'profile_update'} do  |f| %>
+
+    <% if @user.profile_picture? %>
+      <%= image_tag @user.profile_picture.url %>
+    <% else %>
+      <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+    <% end %>
+      <button type="button" class="btn btn-outline-secondary rounded-pill">
+        
+      </button>
+
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= f.label "自己紹介" %><br />
+        <%= f.text_field :introduction %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "保存する" %>
+      </div>
+    <% end %>
+  </div>
+</div>
