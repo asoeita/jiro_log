@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <%= form_for current_user, url: {action: 'profile_update'} do  |f| %>
+    <%= form_for current_user, url: {action: 'profile_update'} do |f| %>
 
     <% if @user.profile_picture? %>
       <%= image_tag @user.profile_picture.url %>
@@ -9,8 +9,9 @@
       <%= image_tag "/assets/default.jpg", :size => '100x100' %>
     <% end %>
       <button type="button" class="btn btn-outline-secondary rounded-pill">
-        
+        <%= f.file_field :profile_picture, accept: 'image/jpeg,image/gif,image/png' %>
       </button>
+    <%= f.submit '更新する', class: 'btn btn-primry' %>
 
       <div class="field">
         <%= f.label :name %><br />

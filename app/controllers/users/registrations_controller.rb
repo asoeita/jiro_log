@@ -16,7 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
    def profile_edit
-  #   super
+     @user = User.find(current_user.id)
    end
 
   # PUT /resource
@@ -28,6 +28,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
        render "profile_edit"
      end
    end
+
+   private
+     #ストロングパラメーター
+     def user_params
+       params.require(:user).permit(:name, :email, :profile_picture, :password, :password_confirmation, :introduction)
+     end
 
   # DELETE /resource
   # def destroy
