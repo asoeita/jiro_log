@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+   before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -16,14 +16,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
    def profile_edit
-     @user = User.find(current_user.id)
+     @user = User.find(params[:id])
    end
 
   # PUT /resource
    def profile_update
-     current_user.assign_attributes(account_update_params)
-     if current_user.save
-       redirect_to user_path, notice: 'プロフィールを更新しました'
+     @user = User.find(params[:id])
+     @user.assign_attributes(user_params)
+     if @user.save
+       flash[:notice] = "プロフィールを更新しました"
+       redirect_to @user
      else
        render "profile_edit"
      end
@@ -32,7 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
    private
      #ストロングパラメーター
      def user_params
-       params.require(:user).permit(:name, :email, :profile_picture, :password, :password_confirmation, :introduction)
+       params.require(:user).permit(:profile_picture, :introduction)
      end
 
   # DELETE /resource
@@ -58,7 +60,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_account_update_params
-     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :profile_picture, :introduction])
    end
 
   # The path used after sign up.

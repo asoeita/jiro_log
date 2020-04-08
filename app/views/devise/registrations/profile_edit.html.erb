@@ -1,18 +1,20 @@
 <div class="container">
-  <div class="row">
+  <%= form_for @user, url: "/profile_update/#{@user.id}", method: :patch do |f| %>
+  <div class="row align-items-center justify-content-center">
+    <aside class="col-md-3">
 
-    <%= form_for current_user, url: {action: 'profile_update'} do |f| %>
-
-    <% if @user.profile_picture? %>
-      <%= image_tag @user.profile_picture.url %>
-    <% else %>
-      <%= image_tag "/assets/default.jpg", :size => '100x100' %>
-    <% end %>
+        <% if @user.profile_picture? %>
+          <%= image_tag @user.profile_picture.url %>
+        <% else %>
+          <%= image_tag "/assets/default.jpg", :size => '250x250' %>
+        <% end %>
       <button type="button" class="btn btn-outline-secondary rounded-pill">
         <%= f.file_field :profile_picture, accept: 'image/jpeg,image/gif,image/png' %>
       </button>
-    <%= f.submit '更新する', class: 'btn btn-primry' %>
-
+    </aside>
+  </div>
+  <div class="row align-items-center justify-content-center">
+    <aside class="col-md-6">
       <div class="field">
         <%= f.label :name %><br />
         <%= f.text_field :name %>
@@ -26,6 +28,7 @@
       <div class="actions">
         <%= f.submit "保存する" %>
       </div>
-    <% end %>
+    </aside>
   </div>
+  <% end %>
 </div>
