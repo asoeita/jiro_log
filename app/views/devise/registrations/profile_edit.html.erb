@@ -1,8 +1,7 @@
 <div class="container">
   <%= form_for @user, url: "/profile_update/#{@user.id}", method: :patch do |f| %>
   <div class="row align-items-center justify-content-center">
-    <aside class="col-md-3">
-
+    <aside class="col-md-7">
         <% if @user.profile_picture? %>
           <%= image_tag @user.profile_picture.url %>
         <% else %>
@@ -15,18 +14,28 @@
   </div>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-6">
-      <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name,
+                          autofocus: true,
+                          autocomplete: 'name',
+                          class: 'form-control',
+                          required: true,
+                          maxlength: '20'%><br />
       </div>
 
-      <div class="field">
+      <div class="form-group">
         <%= f.label "自己紹介" %><br />
-        <%= f.text_field :introduction %>
+        <%= f.text_field :introduction,
+                          autofocus: true,
+                          autocomplete: 'name',
+                          class: 'form-control',
+                          required: true,
+                          maxlength: '255' %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "保存する" %>
+      <div class="form-group"><br />
+        <%= f.submit "保存する", class: 'btn btn-primary btn-block' %>
       </div>
     </aside>
   </div>

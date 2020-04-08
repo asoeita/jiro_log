@@ -34,7 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
    private
      #ストロングパラメーター
      def user_params
-       params.require(:user).permit(:profile_picture, :introduction)
+       params.require(:user).permit(:name, :profile_picture, :introduction)
      end
 
   # DELETE /resource

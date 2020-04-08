@@ -14,16 +14,7 @@
   </div>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-8">
-      <%= form_for @user do |f| %>
-        <%= f.text_field :introduction %>
-      <!-- <p>
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-      </p> -->
-      <% end %>
+      <span class="introduction"><%= @user.introduction %></span>
     </aside>
   </div>
   <hr width="80%">
