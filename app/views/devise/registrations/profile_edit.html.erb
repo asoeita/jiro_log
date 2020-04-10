@@ -3,7 +3,7 @@
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-7">
         <% if @user.profile_picture? %>
-          <%= image_tag @user.profile_picture.url %>
+          <%= image_tag (@user.profile_picture.url), class: 'profile_edit_img' %>
         <% else %>
           <%= image_tag "/assets/default.jpg", :size => '250x250' %>
         <% end %>
@@ -40,4 +40,6 @@
     </aside>
   </div>
   <% end %>
+
+
 </div>

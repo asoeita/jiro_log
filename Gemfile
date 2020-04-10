@@ -42,4 +42,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+group :production do
+  gem 'fog'
+end
+
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
