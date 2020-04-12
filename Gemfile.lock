@@ -103,6 +103,8 @@ GEM
     devise-i18n-views (0.3.7)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dropzonejs-rails (0.8.4)
+      rails (> 3.1)
     dry-inflector (0.2.0)
     erubi (1.9.0)
     excon (0.73.0)
@@ -493,6 +495,7 @@ DEPENDENCIES
   devise-bootstrap-views (~> 1.0)
   devise-i18n
   devise-i18n-views
+  dropzonejs-rails
   fog
   jbuilder (~> 2.5)
   jquery-rails

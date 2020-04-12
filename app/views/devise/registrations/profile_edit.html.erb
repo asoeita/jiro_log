@@ -1,15 +1,17 @@
 <div class="container">
   <%= form_for @user, url: "/profile_update/#{@user.id}", method: :patch do |f| %>
   <div class="row align-items-center justify-content-center">
-    <aside class="col-md-7">
+    <aside class="col-md-12">
+      <div class="img-content">
         <% if @user.profile_picture? %>
           <%= image_tag (@user.profile_picture.url), class: 'profile_edit_img' %>
         <% else %>
           <%= image_tag "/assets/default.jpg", :size => '250x250' %>
         <% end %>
-      <button type="button" class="btn btn-outline-secondary rounded-pill">
+      <button type="button" class="btn btn-outline-secondary rounded-pill img-button">
         <%= f.file_field :profile_picture, accept: 'image/jpeg,image/gif,image/png' %>
       </button>
+      </div>
     </aside>
   </div>
   <div class="row align-items-center justify-content-center">

@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
   private
     #ストロングパラメーター
     def user_params
