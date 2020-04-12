@@ -8,6 +8,9 @@ ruby '2.6.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.1.1'
 gem 'coffee-rails', '~> 4.2'
+gem 'carrierwave'
+gem 'dropzonejs-rails'
+gem 'mini_magick'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
@@ -38,6 +41,10 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'fog'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

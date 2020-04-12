@@ -3,31 +3,23 @@
     <aside class="col-md-5">
       <section class="user_info">
         <h1>
-          <%= gravatar_for @user %>
+          <%= image_tag @user.profile_picture.url %>
           <%= @user.name %>
         </h1>
       </section>
     </aside>
     <aside class="col-md-5">
-      <button class="btn btn-primary btn-outline-primary btn-round" type="button">プロフィール編集</button>
+      <%= button_to 'プロフィール編集', profile_edit_path, method: :get, class: "btn btn-primary btn-outline-primary btn-round" %>
     </aside>
   </div>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-8">
-      <p>
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-        ラーメン二郎歴10年目突入！！好きな店は富士丸神谷本店！！ニンニクヤサイアブラカラメ
-      </p>
+      <span class="introduction"><%= @user.introduction %></span>
     </aside>
   </div>
   <hr width="80%">
   <div class="row select-bar align-items-center justify-content-center">
     <aside class="col-md-8 select-bar">
-
-
       <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
           <a href="#toukou" class="nav-link active" data-toggle="tab">自分の投稿</a>
@@ -38,15 +30,15 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="toukou">
-          <p>青森県・岩手県・宮城県・秋田県・山形県・福島県</p>
+          <p>青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県</p>
         </div>
         <div class="tab-pane" id="okiniiri">
-          <p>hoge県・foo県・huga県・koko県・pupu県・susu県</p>
+          <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
         </div>
       </div>
-
     </aside>
   </div>
+</div>
 
 
   <!-- <ul class="nav nav-tabs">

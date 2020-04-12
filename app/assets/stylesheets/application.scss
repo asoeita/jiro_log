@@ -9,11 +9,15 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require dropzone/basic
+ *= require dropzone/dropzone
  */
-
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+//alert
+.alert-info.alert-notice {
+  margin-top: 30px;
+}
 
 
 body {
@@ -158,4 +162,62 @@ hr {
 
 .row.select-bar{
   margin-top: 5px;
+}
+
+.tab-content {
+  margin-top: 40px;
+}
+
+//プロフ編集画面
+.profile_edit_img {
+  margin: 0 auto;
+  display: block;
+}
+
+.img-content {
+    position: relative;
+    padding: 0;
+    margin: 2em auto;
+    background: #f0f7ff;
+    border: dashed 2px #5b8bd0;/*点線*/
+    height: 404px;
+    width: 404px;
+}
+
+.box6 p {
+    margin: 0;
+    padding: 0;
+}
+
+.img-button {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  border: none;
+  height: 404px;
+  width: 404px;
+}
+
+#user_profile_picture {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  top: 0;
+  border: none;
+  height: 404px;
+  width: 404px;
+  cursor: pointer;
+}
+
+//プロフ画面
+.user_info h1 img {
+  height: 100px;
+  width: 100px;
+}
+
+// footer
+footer{
+  margin-top: 30px;
 }
