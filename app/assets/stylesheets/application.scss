@@ -14,11 +14,11 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
-//alert
-.alert-info.alert-notice {
+
+//フラッシュメッセージ
+.alert {
   margin-top: 30px;
 }
-
 
 body {
   padding-top: 56px;

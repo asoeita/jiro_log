@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_113759) do
+ActiveRecord::Schema.define(version: 2020_04_14_073029) do
 
   create_table "jiros", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -18,11 +18,19 @@ ActiveRecord::Schema.define(version: 2020_04_02_113759) do
     t.string "picture"
     t.string "weather"
     t.datetime "date"
-    t.integer "waiting_time"
+    t.time "waiting_time"
     t.string "call"
     t.string "pork"
     t.string "soup"
     t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id_id"
+    t.index ["user_id_id"], name: "index_jiros_on_user_id_id"
+  end
+
+  create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

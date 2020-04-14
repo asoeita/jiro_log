@@ -12,7 +12,7 @@ class JirosController < ApplicationController
     @jiro = current_user.jiros.build(jiro_params)
     if @jiro.save
       flash[:success] = "投稿しました"
-      redirect_to root_url
+      redirect_to current_user
     else
       render "jiros/new"
     end

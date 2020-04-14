@@ -16,77 +16,60 @@
   </div>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-6">
+      <table class="table">
       <div class="form-group">
-        <%= f.label '天気' %>
-        <%= f.text_field :weather,
+        <%= f.label '店舗' %><br />
+        <%= f.select :store_id, [ ["三田本店",1], ["目黒店", 2], ["仙川店", 3 ] ,["新宿歌舞伎町店", 4], ["品川店", 5], ["新宿小滝橋通り店", 6], ["環七新新代田店", 7], ["八王子野猿街道店２", 8 ] ,["池袋東口店", 9], ["亀戸店", 10], ["京急川崎店", 11], ["府中店", 12], ["松戸駅前店", 13 ] ,["めじろ台店", 14], ["荻窪店", 15], ["上野毛店", 16], ["京成大久保店", 17], ["環七一之江店", 18] ,["相模大野店", 19], ["横浜関内店", 20], ["神田神保町店", 21], ["小岩店", 22], ["ひばりヶ丘駅前店", 23 ] ,["桜台駅前店", 24], ["栃木街道店", 25], ["立川店", 26], ["千住大橋店", 27], ["茨城守谷店", 28] ,["湘南藤沢店", 29], ["西台駅前店", 30], ["中山駅前店", 31], ["仙台店", 32], ["札幌店", 33] ,["会津若松駅前店", 34], ["新潟店", 35], ["川越店", 36], ["京都店", 37], ["越谷店", 38] ,["前橋千代田町店", 39] ], prompt: "店舗を選択してください", :required => true %><br />
+      </div>
+      <div class="form-group">
+        <%= f.label '訪問日' %>
+        <%= f.datetime_field :date,
                           autofocus: true,
-                          autocomplete: 'name',
+                          class: 'form-control',
+                          required: true %><br />
+      </div>
+      <div class="form-group">
+        <%= f.label '天気' %><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "雨" %>雨</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "くもり" %>くもり</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "晴れ" %>晴れ<br /></span>
+      </div>
+      <div class="form-group">
+        <%= f.label '並び時間' %>
+        <%= f.time_field :waiting_time,
+                          autofocus: true,
+                          class: 'form-control',
+                          required: true %><br />
+      </div>
+      <div class="form-group">
+        <%= f.label 'コール' %>
+        <%= f.text_field :call,
+                          autofocus: true,
+                          autocomplete: 'call',
                           class: 'form-control',
                           required: true,
-                          maxlength: '20'%><br />
+                          maxlength: '30'%><br />
       </div>
-
       <div class="form-group">
-        <%= f.label '天気' %>
-        <%= f.text_field :weather,
-                          autofocus: true,
-                          autocomplete: 'name',
-                          class: 'form-control',
-                          required: true,
-                          maxlength: '20'%><br />
+        <%= f.label '豚' %><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "パサ豚" %>パサ豚</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "普通豚" %>普通豚</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "神豚" %>神豚</span><br />
       </div>
-
       <div class="form-group">
-        <%= f.label '天気' %>
-        <%= f.text_field :weather,
-                          autofocus: true,
-                          autocomplete: 'name',
-                          class: 'form-control',
-                          required: true,
-                          maxlength: '20'%><br />
+        <%= f.label 'スープ' %><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化" %>非乳化</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "普通" %>普通</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化" %>乳化</span><br />
       </div>
-
       <div class="form-group">
-        <%= f.label '天気' %>
-        <%= f.text_field :weather,
-                          autofocus: true,
-                          autocomplete: 'name',
-                          class: 'form-control',
-                          required: true,
-                          maxlength: '20'%><br />
+        <%= f.label '自由記入' %>
+        <%= f.text_area :comment,
+                        autofocus: true,
+                        class: 'form-control',
+                        maxlength: '255'%><br />
       </div>
-
-      <div class="form-group">
-        <%= f.label '天気' %>
-        <%= f.text_field :weather,
-                          autofocus: true,
-                          autocomplete: 'name',
-                          class: 'form-control',
-                          required: true,
-                          maxlength: '20'%><br />
-      </div>
-
-      <div class="form-group">
-        <%= f.label '天気' %>
-        <%= f.text_field :weather,
-                          autofocus: true,
-                          autocomplete: 'name',
-                          class: 'form-control',
-                          required: true,
-                          maxlength: '20'%><br />
-      </div>
-
-      <div class="form-group">
-        <%= f.label '天気' %>
-        <%= f.text_field :weather,
-                          autofocus: true,
-                          autocomplete: 'name',
-                          class: 'form-control',
-                          required: true,
-                          maxlength: '20'%><br />
-      </div>
-
-
+      </table>
       <div class="form-group"><br />
         <%= f.submit "投稿する", class: 'btn btn-primary btn-block' %>
       </div>
