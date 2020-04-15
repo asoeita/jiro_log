@@ -16,9 +16,9 @@
 @import "bootstrap";
 
 //フラッシュメッセージ
-.alert {
-  margin-top: 30px;
-}
+// .alert {
+//   margin-top: 30px;
+// }
 
 body {
   padding-top: 56px;
@@ -94,22 +94,68 @@ body {
   @extend .alert-danger;
 }
 
+//二郎詳細
 
 table{
-  width: 50%;
+  width: 100%;
   border-collapse: collapse;
-  border-spacing: 0;
-  margin: 30px auto;
 }
 
-table th,table td{
-  padding: 10px 0;
+table tr{
+  border-bottom: solid 2px white;
+}
+
+table tr:last-child{
+  border-bottom: none;
+}
+
+table th{
+  position: relative;
+  text-align: left;
+  width: 30%;
+  background-color: #52c2d0;
+  color: white;
   text-align: center;
+  padding: 10px 0;
 }
 
-table tr:nth-child(odd){
-  background-color: #eee
+table th:after{
+  display: block;
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top:calc(50% - 10px);
+  right:-10px;
+  border-left: 10px solid #52c2d0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
+
+table td{
+  text-align: left;
+  width: 70%;
+  text-align: center;
+  background-color: #eee;
+  padding: 10px 0;
+} #eee
+
+
+// table{
+//   width: 50%;
+//   border-collapse: collapse;
+//   border-spacing: 0;
+//   margin: 30px auto;
+// }
+//
+// table th,table td{
+//   padding: 10px 0;
+//   text-align: center;
+// }
+//
+// table tr:nth-child(odd){
+//   background-color: #eee
+// }
 
 /* ユーザー詳細画面 */
 

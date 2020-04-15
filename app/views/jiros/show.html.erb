@@ -1,38 +1,47 @@
+<div class="container">
+  <div class="row align-items-center justify-content-center">
+    <aside class="col-md-12">
 <div class="table-container">
   <table>
-    <tr>
-      <th>投稿者</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>店舗</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>天気</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>行った日</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>並び時間</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>コール</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>豚</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>スープ</th>
-      <td>データ</td>
-    </tr>
-    <tr>
-      <th>その他</th>
-      <td>データ</td>
-  </table>
+  <tr>
+    <th>投稿者</th>
+    <td>hogehoge</td>
+  </tr>
+  <tr>
+    <th>店舗</th>
+    <td>hogehoge</td>
+  </tr>
+  <tr>
+    <th>訪問日時</th>
+    <td><%= @jiro.date.strftime("%Y年%m月%d日%H時%M分") %></td>
+  </tr>
+  <tr>
+    <th>並び時間</th>
+    <td><%= @jiro.waiting_time.strftime("%-H時間%M分") %></td>
+  </tr>
+  <tr>
+    <th>天気</th>
+    <td><%= @jiro.weather %></td>
+  </tr>
+  <tr>
+    <th>コール</th>
+    <td><%= @jiro.call %></td>
+  </tr>
+  <tr>
+    <th>スープ</th>
+    <td><%= @jiro.soup %></td>
+  </tr>
+  <tr>
+    <th>豚</th>
+    <td><%= @jiro.pork %></td>
+  </tr>
+  <tr>
+    <th>感想</th>
+    <td><%= @jiro.comment %></td>
+  </tr>
+
+</table>
+</div>
+</aside>
+</div>
+</div>

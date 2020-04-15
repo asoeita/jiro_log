@@ -2,6 +2,7 @@ class JirosController < ApplicationController
   before_action :authenticate_user!, only: [:create, :destroy]
 
   def show
+    @jiro = Jiro.find(params[:id])
   end
 
   def new

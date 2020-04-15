@@ -23,7 +23,7 @@
       </div>
       <div class="form-group">
         <%= f.label '訪問日' %>
-        <%= f.datetime_field :date,
+        <%= f.date_select :date,
                           autofocus: true,
                           class: 'form-control',
                           required: true %><br />
@@ -36,7 +36,7 @@
       </div>
       <div class="form-group">
         <%= f.label '並び時間' %>
-        <%= f.time_field :waiting_time,
+        <%= f.time_select :waiting_time,
                           autofocus: true,
                           class: 'form-control',
                           required: true %><br />
@@ -53,14 +53,14 @@
       <div class="form-group">
         <%= f.label '豚' %><br />
         <span style="margin-right: 3em;"><%= f.radio_button :pork, "パサ豚" %>パサ豚</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :pork, "普通豚" %>普通豚</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "バランス豚" %>バランス豚</span>
         <span style="margin-right: 3em;"><%= f.radio_button :pork, "神豚" %>神豚</span><br />
       </div>
       <div class="form-group">
         <%= f.label 'スープ' %><br />
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化" %>非乳化</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "普通" %>普通</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化" %>乳化</span><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化スープ" %>非乳化スープ</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "バランススープ" %>バランススープ</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化スープ" %>乳化スープ</span><br />
       </div>
       <div class="form-group">
         <%= f.label '自由記入' %>
