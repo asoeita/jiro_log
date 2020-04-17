@@ -3,7 +3,11 @@
     <aside class="col-md-5">
       <section class="user_info">
         <h1>
-          <%= image_tag @user.profile_picture.url %>
+          <% if @user.profile_picture? %>
+            <%= image_tag (@user.profile_picture.url) %>
+          <% else %>
+            <%= image_tag "/assets/default.jpg", :size => '250x250' %>
+          <% end %>
           <%= @user.name %>
         </h1>
       </section>

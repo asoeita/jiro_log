@@ -3,6 +3,7 @@ class JirosController < ApplicationController
 
   def show
     @jiro = Jiro.find(params[:id])
+    @poster  = User.find_by(id: @jiro.user_id)
   end
 
   def new
@@ -22,7 +23,7 @@ class JirosController < ApplicationController
   private
     #ストロングパラメーター
     def jiro_params
-      params.require(:jiro).permit(:picture, :weather, :date, :waiting_time, :call, :pork, :soup, :comment)
+      params.require(:jiro).permit(:picture, :store_id, :weather, :date, :waiting_time, :call, :pork, :soup, :comment)
     end
 
 end

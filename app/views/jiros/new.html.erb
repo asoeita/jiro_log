@@ -15,34 +15,43 @@
     </aside>
   </div>
   <div class="row align-items-center justify-content-center">
-    <aside class="col-md-6">
+    <aside class="col-md-8">
       <table class="table">
       <div class="form-group">
         <%= f.label '店舗' %><br />
+        <div class="input-form">
         <%= f.select :store_id, [ ["三田本店",1], ["目黒店", 2], ["仙川店", 3 ] ,["新宿歌舞伎町店", 4], ["品川店", 5], ["新宿小滝橋通り店", 6], ["環七新新代田店", 7], ["八王子野猿街道店２", 8 ] ,["池袋東口店", 9], ["亀戸店", 10], ["京急川崎店", 11], ["府中店", 12], ["松戸駅前店", 13 ] ,["めじろ台店", 14], ["荻窪店", 15], ["上野毛店", 16], ["京成大久保店", 17], ["環七一之江店", 18] ,["相模大野店", 19], ["横浜関内店", 20], ["神田神保町店", 21], ["小岩店", 22], ["ひばりヶ丘駅前店", 23 ] ,["桜台駅前店", 24], ["栃木街道店", 25], ["立川店", 26], ["千住大橋店", 27], ["茨城守谷店", 28] ,["湘南藤沢店", 29], ["西台駅前店", 30], ["中山駅前店", 31], ["仙台店", 32], ["札幌店", 33] ,["会津若松駅前店", 34], ["新潟店", 35], ["川越店", 36], ["京都店", 37], ["越谷店", 38] ,["前橋千代田町店", 39] ], prompt: "店舗を選択してください", :required => true %><br />
       </div>
+      </div>
       <div class="form-group">
-        <%= f.label '訪問日' %>
-        <%= f.date_select :date,
+        <%= f.label '訪問日時' %><br />
+        <div class="input-form">
+        <%= f.datetime_select :date,
                           autofocus: true,
                           class: 'form-control',
                           required: true %><br />
       </div>
+      </div>
       <div class="form-group">
         <%= f.label '天気' %><br />
+      <div class="input-form">
         <span style="margin-right: 3em;"><%= f.radio_button :weather, "雨" %>雨</span>
         <span style="margin-right: 3em;"><%= f.radio_button :weather, "くもり" %>くもり</span>
         <span style="margin-right: 3em;"><%= f.radio_button :weather, "晴れ" %>晴れ<br /></span>
       </div>
+      </div>
       <div class="form-group">
-        <%= f.label '並び時間' %>
+        <%= f.label '並び時間' %><br />
+        <div class="select-form">
         <%= f.time_select :waiting_time,
                           autofocus: true,
                           class: 'form-control',
                           required: true %><br />
       </div>
+      </div>
       <div class="form-group">
         <%= f.label 'コール' %>
+        <div class="input-form">
         <%= f.text_field :call,
                           autofocus: true,
                           autocomplete: 'call',
@@ -50,17 +59,22 @@
                           required: true,
                           maxlength: '30'%><br />
       </div>
+      </div>
       <div class="form-group">
         <%= f.label '豚' %><br />
+        <div class="input-form">
         <span style="margin-right: 3em;"><%= f.radio_button :pork, "パサ豚" %>パサ豚</span>
         <span style="margin-right: 3em;"><%= f.radio_button :pork, "バランス豚" %>バランス豚</span>
         <span style="margin-right: 3em;"><%= f.radio_button :pork, "神豚" %>神豚</span><br />
       </div>
+      </div>
       <div class="form-group">
         <%= f.label 'スープ' %><br />
+        <div class="input-form">
         <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化スープ" %>非乳化スープ</span>
         <span style="margin-right: 3em;"><%= f.radio_button :soup, "バランススープ" %>バランススープ</span>
         <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化スープ" %>乳化スープ</span><br />
+      </div>
       </div>
       <div class="form-group">
         <%= f.label '自由記入' %>
