@@ -1,3 +1,3 @@
 class Store < ApplicationRecord
-  belongs_to :jiro
+  has_one :jiro, dependent: :destroy
 end
