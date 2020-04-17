@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   private
     #ストロングパラメーター
     def user_params
-      params.require(:user).permit(:name, :email, :profile_picture, :password, :password_confirmation, :introduce, )
+      params.require(:user).permit(:name, :email, :profile_picture, :password, :password_confirmation, :introduce)
     end
 
 end

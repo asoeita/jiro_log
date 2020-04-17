@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   mount_uploader :profile_picture, ImageUploader
   validate :picture_size
-
+  has_many :jiros, dependent: :destroy
 
   private
 
