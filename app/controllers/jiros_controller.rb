@@ -4,6 +4,7 @@ class JirosController < ApplicationController
   def show
     @jiro = Jiro.find(params[:id])
     @poster  = User.find_by(id: @jiro.user_id)
+    @store = Store.find_by(id: @jiro.store_id)
   end
 
   def new
