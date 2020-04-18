@@ -19,6 +19,9 @@
             <%= link_to '投稿する', new_jiro_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
+            <%= link_to 'マイページ', current_user, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
           <% else %>

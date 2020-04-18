@@ -2,14 +2,14 @@
   <%= form_for @user, url: "/profile_update/#{@user.id}", method: :patch do |f| %>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-12">
-      <div class="img-content">
+      <div class="view_box">
         <% if @user.profile_picture? %>
           <%= image_tag (@user.profile_picture.url), class: 'profile_edit_img' %>
         <% else %>
-          <%= image_tag "/assets/default.jpg", :size => '250x250' %>
+          <%= image_tag "/assets/default.jpg", :size => '400x400' %>
         <% end %>
       <button type="button" class="btn btn-outline-secondary rounded-pill img-button">
-        <%= f.file_field :profile_picture, accept: 'image/jpeg,image/gif,image/png' %>
+        <%= f.file_field :profile_picture, accept: 'image/jpeg,image/gif,image/png', class: 'file' %>
       </button>
       </div>
     </aside>
@@ -28,7 +28,7 @@
 
       <div class="form-group">
         <%= f.label "自己紹介" %><br />
-        <%= f.text_field :introduction,
+        <%= f.text_area :introduction,
                           autofocus: true,
                           autocomplete: 'name',
                           class: 'form-control',

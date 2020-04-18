@@ -148,6 +148,17 @@ table td{
     font-weight: bold;
   }
 
+#jiro_picture {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  top: 0;
+  border: none;
+  height: 400px;
+  width: 400px;
+  cursor: pointer;
+}
+
   .input-form {
     border-bottom: 1px solid #212529;
     padding: 10px 0;
@@ -239,9 +250,11 @@ hr {
 .profile_edit_img {
   margin: 0 auto;
   display: block;
+  height: 400px;
+  width: 400px;
 }
 
-.img-content {
+.view_box {
     position: relative;
     padding: 0;
     margin: 2em auto;
@@ -250,6 +263,7 @@ hr {
     height: 404px;
     width: 404px;
 }
+
 
 .box6 p {
     margin: 0;
@@ -261,10 +275,11 @@ hr {
   padding: 0;
   opacity: 0;
   position: absolute;
-  top: 0;
   border: none;
-  height: 404px;
-  width: 404px;
+  left: 0px;
+  height: 400px;
+  width: 400px;
+  cursor: pointer;
 }
 
 #user_profile_picture {
@@ -288,3 +303,5 @@ hr {
 footer{
   margin-top: 30px;
 }
+
+//test
