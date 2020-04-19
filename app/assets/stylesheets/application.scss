@@ -45,7 +45,7 @@ body {
 
 //トップページ
 // .top-page-container {
-//   height: 800px;
+//   height: 900px;
 // }
 
 .bg-dark {
@@ -80,8 +80,8 @@ body {
 }
 
 .pagination{
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
+  margin: 40px;
 }
 
 // ログイン画面
@@ -226,15 +226,6 @@ aside {
       margin-top: 0px;
     }
   }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
 }
 
 .btn.btn-primary.btn-outline-primary.btn-round {
