@@ -1,15 +1,21 @@
 <div class="container">
+  <h2>二郎を投稿する</h2>
   <%= form_for @jiro do |f| %>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-12">
       <div class="view_box">
-          <%= image_tag "/assets/ramen.jpg", :size => '400x400' %>
+        <% if @jiro.picture? %>
+          <%= image_tag @jiro.picture_url, :size => '400x400' %>
+        <% else %>
+          <%= image_tag "/assets/ramen2.jpg", :size => '400x400' %>
+        <% end %>
       <button type="button" class="btn btn-outline-secondary rounded-pill img-button">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file', required: true %>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file',　autofocus: true, required: true %>
       </button>
       </div>
     </aside>
   </div>
+
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-8">
       <table class="table">
@@ -23,7 +29,7 @@
         <%= f.label '訪問日時' %><br />
         <div class="input-form">
         <%= f.datetime_select :date,
-                          autofocus: true,
+                          # autofocus: true,
                           class: 'form-control',
                           required: true %><br />
       </div>
@@ -40,7 +46,7 @@
         <%= f.label '並び時間' %><br />
         <div class="select-form">
         <%= f.time_select :waiting_time,
-                          autofocus: true,
+                          # autofocus: true,
                           class: 'form-control',
                           required: true %><br />
       </div>
@@ -49,7 +55,7 @@
         <%= f.label 'コール' %>
         <div class="input-form">
         <%= f.text_field :call,
-                          autofocus: true,
+                          # autofocus: true,
                           autocomplete: 'call',
                           class: 'form-control',
                           required: true,
@@ -75,7 +81,7 @@
       <div class="form-group">
         <%= f.label '自由記入' %>
         <%= f.text_area :comment,
-                        autofocus: true,
+                        # autofocus: true,
                         class: 'form-control',
                         maxlength: '255'%><br />
       </div>
