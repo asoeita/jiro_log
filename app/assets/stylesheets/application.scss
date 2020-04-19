@@ -183,6 +183,10 @@ table td{
   }
 }
 
+textarea.form-control {
+    height: 200px;
+}
+
 // .select-form {
 //   width: 100%;
 //   border-bottom: 1px solid #212529;
@@ -190,7 +194,6 @@ table td{
 // }
 
 /* ユーザー詳細画面 */
-
 aside {
   section.user_info {
     margin-top: 20px;
@@ -247,12 +250,12 @@ hr {
 }
 
 //プロフ編集画面
-.profile_edit_img {
-  margin: 0 auto;
-  display: block;
-  height: 400px;
-  width: 400px;
-}
+// .profile_edit_img {
+//   margin: 0 auto;
+//   display: block;
+//   height: 400px;
+//   width: 400px;
+// }
 
 .view_box {
     position: relative;
@@ -288,8 +291,8 @@ hr {
   opacity: 0;
   top: 0;
   border: none;
-  height: 404px;
-  width: 404px;
+  height: 400px;
+  width: 400px;
   cursor: pointer;
 }
 

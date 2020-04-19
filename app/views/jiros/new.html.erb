@@ -3,13 +3,9 @@
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-12">
       <div class="view_box">
-        <% if @jiro.picture? %>
-          <%= image_tag (@jiro.picture.url), class: 'profile_edit_img' %>
-        <% else %>
-          <%= image_tag "/assets/default.jpg", :size => '400x400' %>
-        <% end %>
+          <%= image_tag "/assets/ramen.jpg", :size => '400x400' %>
       <button type="button" class="btn btn-outline-secondary rounded-pill img-button">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file' %>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file', required: true %>
       </button>
       </div>
     </aside>
@@ -35,9 +31,9 @@
       <div class="form-group">
         <%= f.label '天気' %><br />
       <div class="input-form">
-        <span style="margin-right: 3em;"><%= f.radio_button :weather, "雨" %>雨</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :weather, "くもり" %>くもり</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :weather, "晴れ" %>晴れ<br /></span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "雨", required: true %>雨</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "くもり", required: true %>くもり</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "晴れ", required: true %>晴れ<br /></span>
       </div>
       </div>
       <div class="form-group">
@@ -63,17 +59,17 @@
       <div class="form-group">
         <%= f.label '豚' %><br />
         <div class="input-form">
-        <span style="margin-right: 3em;"><%= f.radio_button :pork, "パサ豚" %>パサ豚</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :pork, "バランス豚" %>バランス豚</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :pork, "神豚" %>神豚</span><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "パサ豚", required: true %>パサ豚</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "バランス豚", required: true %>バランス豚</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "神豚", required: true %>神豚</span><br />
       </div>
       </div>
       <div class="form-group">
         <%= f.label 'スープ' %><br />
         <div class="input-form">
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化スープ" %>非乳化スープ</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "バランススープ" %>バランススープ</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化スープ" %>乳化スープ</span><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化スープ", required: true %>非乳化スープ</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "バランススープ", required: true %>バランススープ</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化スープ", required: true %>乳化スープ</span><br />
       </div>
       </div>
       <div class="form-group">

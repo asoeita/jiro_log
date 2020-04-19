@@ -1,6 +1,18 @@
 <div class="container">
+  <%= form_for @jiro do |f| %>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-12">
+      <div class="view_box">
+        <% if @jiro.picture? %>
+          <%= image_tag @jiro.picture.url %>
+        <% else %>
+          <%= image_tag "/assets/ramen.jpg", :size => '400x400' %>
+        <% end %>
+      <button type="button" class="btn btn-outline-secondary rounded-pill img-button">
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file' %>
+      </button>
+      </div>
+      <% end %>
 <div class="table-container">
   <table>
   <tr>

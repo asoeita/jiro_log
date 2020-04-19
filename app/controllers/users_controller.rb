@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   def index
+    @jiros = Jiro.all
   end
 
   def new

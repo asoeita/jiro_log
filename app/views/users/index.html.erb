@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja">
-
 <head>
 
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -26,101 +22,19 @@
     <!-- Page Features -->
     <div class="row text-center">
 
+    <% @jiros.each do |jiro| %>
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
           <img class="card-img-top" src="http://placehold.it/500x325" alt="">
           <div class="card-body">
-            <h4 class="card-title">ラーメン二郎　ひばりヶ丘店</h4>
+            <h4 class="card-title"><%= link_to Store.find_by_id(jiro.store_id)&.name, jiro %></h4>
           </div>
           <div class="card-footer">
             <i class="far fa-heart like-btn"></i>
           </div>
         </div>
       </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">ラーメン二郎　神保町店</h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">ラーメン二郎　三田本店</h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">ラーメン二郎　八王子野猿街道店２</h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
-        </div>
-      </div>
+    <% end %>
 
       <ul class="pagination pagination-lg">
               <li class="page-item disabled">
@@ -158,5 +72,3 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
-</html>

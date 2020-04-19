@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # アップロードされた画像のサイズをバリデーションする
   def picture_size
     if profile_picture.size > 5.megabytes
-      errors.add(:picture, "should be less than 5MB")
+      errors.add(:profile_picture, "should be less than 5MB")
     end
   end
 end
