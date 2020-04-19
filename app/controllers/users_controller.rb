@@ -3,6 +3,7 @@
 class UsersController < ApplicationController
   def index
     @jiros = Jiro.all
+    @jiros = Jiro.page(params[:page]).per(8)
   end
 
   def new
