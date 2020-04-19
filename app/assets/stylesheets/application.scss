@@ -24,6 +24,12 @@ body {
   padding-top: 56px;
 }
 
+.row{
+  margin-top: 40px;
+}
+
+
+//ヘッダー
 .navbar-brand{
   font-size: 30px;
 }
@@ -36,12 +42,14 @@ body {
   color: rgb(0, 0, 0);
 }
 
+
+//トップページ
+// .top-page-container {
+//   height: 800px;
+// }
+
 .bg-dark {
   background-color: #fed500 !important;
-}
-
-.row{
-  margin-top: 40px;
 }
 
 .like-btn {
