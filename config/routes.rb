@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'favorites/create'
+  get 'favorites/destroy'
   devise_for :users
   devise_scope :user do
     get  'profile_edit/:id', to: 'users/registrations#profile_edit', as: 'profile_edit'
