@@ -6,6 +6,7 @@ class User < ApplicationRecord
   mount_uploader :profile_picture, ImageUploader
   validate :picture_size
   has_many :jiros, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   private
 
@@ -16,4 +17,9 @@ class User < ApplicationRecord
       errors.add(:profile_picture, "should be less than 5MB")
     end
   end
+
+  def current_user?(user)
+    user == current_user
+  end
+
 end

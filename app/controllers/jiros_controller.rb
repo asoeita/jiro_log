@@ -21,6 +21,7 @@ class JirosController < ApplicationController
     end
   end
 
+
   private
     #ストロングパラメーター
     def jiro_params
