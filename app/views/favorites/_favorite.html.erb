@@ -1,18 +1,11 @@
-<% if !current_user?(jiro.user) %>
-    <span class="like">
-    <% if jiro.like?(current_user) %>
-      <%= form_for(jiro.favorites.find_by(user_id: current_user.id), method: :delete, remote: true) do |f| %>
-        <%= button_tag(class: "btn btn-default btn-xs") do %>
-          <%= content_tag :span, "#", class: "glyphicon glyphicon-heart" %>
-        <% end %>
-      <% end %>
-    <% else %>
-      <%= form_for(jiro.favorites.build, remote: true) do |f| %>
-        <div><%= hidden_field_tag :jiro_id, jiro.id %></div>
-        <%= button_tag(class: "btn btn-default btn-xs") do %>
-          <%= content_tag :span, "#", class: "glyphicon glyphicon-heart-empty" %>
-        <% end %>
-      <% end %>
+<div class="like-link" id="like-link-<%= jiro.id %>">
+  <% if current_user.favorites.find_by(jiro_id: jiro.id) %>
+    <%= link_to unlike_path(jiro.id), method: :delete, remote: true do %>
+        <div class = "iine__button">❤️<%= jiro.favorites.count %></div>
     <% end %>
-  </span>
-<% end %>
+  <% else %>
+    <%= link_to like_path(jiro.id), method: :post, remote: true do %>
+        <div class = "iine__button">♡️<%= jiro.favorites.count %></div>
+    <% end %>
+  <% end %>
+</div>

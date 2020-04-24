@@ -1,15 +1,22 @@
 class FavoritesController < ApplicationController
-  before_action :logged_in_user
-  def create
-    @jiro = Jiro.find(params[:jiro_id])
-    @jiro.like(current_user)
-  end
+  before_action :set_variables
 
-  def destroy
-    @jiro = Favorite.find(params[:id]).jiro
-    @jiro.unlike(current_user)
-  end
+  def like
+      like = current_user.favorites.new(jiro_id: @jiro.id)
+      like.save
+    end
 
+    def unlike
+      like = current_user.favorites.find_by(jiro_id: @jiro.id)
+      like.destroy
+    end
+
+    private
+
+    def set_variables
+      @jiro = Jiro.find(params[:jiro_id])
+      @id_name = "#like-link-#{@jiro.id}"
+    end
 
 
 end

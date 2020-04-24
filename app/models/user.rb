@@ -6,7 +6,10 @@ class User < ApplicationRecord
   mount_uploader :profile_picture, ImageUploader
   validate :picture_size
   has_many :jiros, dependent: :destroy
+
+  #いいね機能
   has_many :favorites, dependent: :destroy
+  has_many :like_jiros, through: :favorites, source: :jiro
 
   private
 

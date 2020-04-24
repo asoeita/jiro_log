@@ -26,23 +26,19 @@
             </h4>
           </div>
           <div class="card-footer">
-            <li id="jiro-<%= jiro.id %>" data-jiro-id="<%= jiro.id %>">
-               <span class="timestamp">
-               </span>
-
-    <!-- 部分テンプレート favoritesファイルの_favorite.html.erbにいき、partial側ではローカル変数jiroでjiroを参照できる。 -->
-               <%= render "favorites/favorite", jiro: jiro %>
-            </li>
+            <i class="far fa-heart like-btn"></i>
           </div>
           <% end %>
+          <%= render partial: 'jiros/jiros', locals: { jiro: jiro } %>
         </div>
     <% end %>
+
   </div>
 
 
     <!-- <div class="row text-center"> -->
       <%= paginate @jiros %>
-                  <!-- </div> -->
+    <!-- </div> -->
 
 
   </div>
