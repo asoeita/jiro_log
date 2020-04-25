@@ -4,7 +4,7 @@
     <aside class="col-md-12">
       <div class="view_box">
         <% if @user.profile_picture? %>
-          <%= image_tag (@user.profile_picture.url), class: 'profile_edit_img' %>
+          <%= image_tag @user.profile_picture.url, :size => '400x400' %>
         <% else %>
           <%= image_tag "/assets/default.jpg", :size => '400x400' %>
         <% end %>
@@ -32,7 +32,6 @@
                           autofocus: true,
                           autocomplete: 'name',
                           class: 'form-control',
-                          required: true,
                           maxlength: '255' %>
       </div>
 

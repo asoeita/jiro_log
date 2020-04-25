@@ -1,19 +1,21 @@
 <div class="container">
+  <h2>二郎を投稿する</h2>
   <%= form_for @jiro do |f| %>
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-12">
       <div class="view_box">
         <% if @jiro.picture? %>
-          <%= image_tag (@jiro.picture.url), class: 'profile_edit_img' %>
+          <%= image_tag @jiro.picture_url, :size => '400x400' %>
         <% else %>
-          <%= image_tag "/assets/default.jpg", :size => '400x400' %>
+          <%= image_tag "/assets/ramen2.jpg", :size => '400x400' %>
         <% end %>
       <button type="button" class="btn btn-outline-secondary rounded-pill img-button">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file' %>
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'file',　autofocus: true, required: true %>
       </button>
       </div>
     </aside>
   </div>
+
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-8">
       <table class="table">
@@ -27,7 +29,7 @@
         <%= f.label '訪問日時' %><br />
         <div class="input-form">
         <%= f.datetime_select :date,
-                          autofocus: true,
+                          # autofocus: true,
                           class: 'form-control',
                           required: true %><br />
       </div>
@@ -35,16 +37,16 @@
       <div class="form-group">
         <%= f.label '天気' %><br />
       <div class="input-form">
-        <span style="margin-right: 3em;"><%= f.radio_button :weather, "雨" %>雨</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :weather, "くもり" %>くもり</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :weather, "晴れ" %>晴れ<br /></span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "雨", required: true %>雨</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "くもり", required: true %>くもり</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :weather, "晴れ", required: true %>晴れ<br /></span>
       </div>
       </div>
       <div class="form-group">
         <%= f.label '並び時間' %><br />
         <div class="select-form">
         <%= f.time_select :waiting_time,
-                          autofocus: true,
+                          # autofocus: true,
                           class: 'form-control',
                           required: true %><br />
       </div>
@@ -53,7 +55,7 @@
         <%= f.label 'コール' %>
         <div class="input-form">
         <%= f.text_field :call,
-                          autofocus: true,
+                          # autofocus: true,
                           autocomplete: 'call',
                           class: 'form-control',
                           required: true,
@@ -63,23 +65,23 @@
       <div class="form-group">
         <%= f.label '豚' %><br />
         <div class="input-form">
-        <span style="margin-right: 3em;"><%= f.radio_button :pork, "パサ豚" %>パサ豚</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :pork, "バランス豚" %>バランス豚</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :pork, "神豚" %>神豚</span><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "パサ豚", required: true %>パサ豚</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "バランス豚", required: true %>バランス豚</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :pork, "神豚", required: true %>神豚</span><br />
       </div>
       </div>
       <div class="form-group">
         <%= f.label 'スープ' %><br />
         <div class="input-form">
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化スープ" %>非乳化スープ</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "バランススープ" %>バランススープ</span>
-        <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化スープ" %>乳化スープ</span><br />
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "非乳化スープ", required: true %>非乳化スープ</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "バランススープ", required: true %>バランススープ</span>
+        <span style="margin-right: 3em;"><%= f.radio_button :soup, "乳化スープ", required: true %>乳化スープ</span><br />
       </div>
       </div>
       <div class="form-group">
         <%= f.label '自由記入' %>
         <%= f.text_area :comment,
-                        autofocus: true,
+                        # autofocus: true,
                         class: 'form-control',
                         maxlength: '255'%><br />
       </div>

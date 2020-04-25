@@ -24,6 +24,12 @@ body {
   padding-top: 56px;
 }
 
+.row{
+  margin-top: 40px;
+}
+
+
+//ヘッダー
 .navbar-brand{
   font-size: 30px;
 }
@@ -36,21 +42,18 @@ body {
   color: rgb(0, 0, 0);
 }
 
+
+//トップページ
+// .top-page-container {
+//   height: 900px;
+// }
+
 .bg-dark {
   background-color: #fed500 !important;
 }
 
-.row{
-  margin-top: 40px;
-}
-
-.like-btn {
-  width: 25px;
-  height: 30px;
-  font-size: 25px;
-  color: #808080;
-  margin-left: 0px;
-  float: left;
+.card {
+  border: none;
 }
 
 .card-title {
@@ -60,21 +63,39 @@ body {
 
 .card-body {
   padding: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.card-footer {
-  background-color: white;
-  border-top: 0px;
-}
+// .card-footer {
+//   background-color: white;
+//   border-top: 0px;
+// }
 
 .text-white {
   color: #000000 !important;
 }
 
 .pagination{
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: center;
+  margin: 40px;
 }
+
+.iine__button{
+    background: linear-gradient(to right, #feb400, #FFE300);
+    line-height: 42px;
+    color: #6d3701;
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 18px;
+    border-radius: 100px;
+    font-weight: bold;
+ }
+
+ .like-link {
+   display: flex;
+   margin-left: 10px;
+   margin-bottom: 5px;
+ }
 
 // ログイン画面
 
@@ -183,6 +204,10 @@ table td{
   }
 }
 
+textarea.form-control {
+    height: 200px;
+}
+
 // .select-form {
 //   width: 100%;
 //   border-bottom: 1px solid #212529;
@@ -190,7 +215,6 @@ table td{
 // }
 
 /* ユーザー詳細画面 */
-
 aside {
   section.user_info {
     margin-top: 20px;
@@ -217,15 +241,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
 .btn.btn-primary.btn-outline-primary.btn-round {
   float: right;
 }
@@ -247,12 +262,12 @@ hr {
 }
 
 //プロフ編集画面
-.profile_edit_img {
-  margin: 0 auto;
-  display: block;
-  height: 400px;
-  width: 400px;
-}
+// .profile_edit_img {
+//   margin: 0 auto;
+//   display: block;
+//   height: 400px;
+//   width: 400px;
+// }
 
 .view_box {
     position: relative;
@@ -288,8 +303,8 @@ hr {
   opacity: 0;
   top: 0;
   border: none;
-  height: 404px;
-  width: 404px;
+  height: 400px;
+  width: 400px;
   cursor: pointer;
 }
 

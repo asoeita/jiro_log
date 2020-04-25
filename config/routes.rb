@@ -9,4 +9,9 @@ Rails.application.routes.draw do
   root 'users#index'
   resources :users
   resources :jiros
+  resources :favorites, only: [:create, :destroy]
+
+  #いいね機能
+  post '/favorite/:jiro_id' => 'favorites#like', as: 'like'
+  delete '/favorite/:jiro_id' => 'favorites#unlike', as: 'unlike'
 end

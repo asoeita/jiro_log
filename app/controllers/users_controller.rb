@@ -2,17 +2,23 @@
 
 class UsersController < ApplicationController
   def index
+    @jiros = Jiro.all
+    @jiros = Jiro.page(params[:page]).per(8)
   end
 
   def new
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @jiros = Jiro.all
+    @jiros = Jiro.page(params[:page]).per(8)
+    @jiro = Jiro.find_by(user_id: current_user.id)
+
   end
 
 
