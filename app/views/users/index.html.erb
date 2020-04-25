@@ -14,9 +14,10 @@
 
     <% @jiros.each do |jiro| %>
       <div class="col-lg-3 col-md-6 mb-4">
-        <%= link_to jiro, class: "card h-100" do %>
+        <div class="card-body">
+
+        <%= link_to jiro, class: "card" do %>
           <%= image_tag jiro.picture.url, :size => '245x200' %>
-          <div class="card-body">
             <h4 class="card-title">
               <% if jiro.store_id %>
                 <%= Store.find_by_id(jiro.store_id)&.name %>
@@ -24,17 +25,17 @@
                 <%= "店舗情報なし" %>
               <% end %>
             </h4>
-          </div>
-          <div class="card-footer">
-            <i class="far fa-heart like-btn"></i>
-          </div>
+            <!-- <div class="card-footer"> -->
+            <!-- </div> -->
+
+          <!-- </div> -->
           <% end %>
           <%= render partial: 'jiros/jiros', locals: { jiro: jiro } %>
+        </div>
         </div>
     <% end %>
 
   </div>
-
 
     <!-- <div class="row text-center"> -->
       <%= paginate @jiros %>

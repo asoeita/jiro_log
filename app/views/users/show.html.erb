@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row align-items-center justify-content-center">
-    <aside class="col-md-5">
+    <aside class="col-md-6">
       <section class="user_info">
         <h1>
           <% if @user.profile_picture? %>
@@ -12,18 +12,18 @@
         </h1>
       </section>
     </aside>
-    <aside class="col-md-5">
+    <aside class="col-md-6">
       <%= button_to 'プロフィール編集', profile_edit_path, method: :get, class: "btn btn-primary btn-outline-primary btn-round" %>
     </aside>
   </div>
   <div class="row align-items-center justify-content-center">
-    <aside class="col-md-8">
+    <aside class="col-md-12">
       <span class="introduction"><%= @user.introduction %></span>
     </aside>
   </div>
   <hr width="80%">
   <div class="row select-bar align-items-center justify-content-center">
-    <aside class="col-md-8 select-bar">
+    <aside class="col-md-12 select-bar">
       <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
           <a href="#toukou" class="nav-link active" data-toggle="tab">自分の投稿</a>
@@ -34,7 +34,24 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="toukou">
-          <p>青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県青森県・岩手県・宮城県・秋田県・山形県・福島県</p>
+          <% @jiros.each do |jiro| %>
+            <div class="col-lg-3 col-md-6 mb-4">
+              <div class="card-body">
+
+              <%= link_to jiro, class: "card" do %>
+                <%= image_tag jiro.picture.url, :size => '245x200' %>
+                  <h4 class="card-title">
+                    <% if jiro.store_id %>
+                      <%= Store.find_by_id(@jiro.store_id)&.name %>
+                    <% else %>
+                      <%= "店舗情報なし" %>
+                    <% end %>
+                  </h4>
+                <% end %>
+                <%= render partial: 'jiros/jiros', locals: { jiro: jiro } %>
+              </div>
+              </div>
+          <% end %>
         </div>
         <div class="tab-pane" id="okiniiri">
           <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
@@ -43,44 +60,3 @@
     </aside>
   </div>
 </div>
-
-
-  <!-- <ul class="nav nav-tabs">
-  <li class="active"><a href="#touhoku" data-toggle="tab">東北地方</a></li>
-  <li><a href="#kantou" data-toggle="tab">関東地方</a></li>
-  <li><a href="#chuubu" data-toggle="tab">中部地方</a></li>
-</ul>
-
-<div class="tab-content">
-  <div class="tab-pane active" id="touhoku">
-    <p>青森県・岩手県・宮城県・秋田県・山形県・福島県</p>
-  </div>
-  <div class="tab-pane" id="kantou">
-    <p>茨城県・栃木県・群馬県・埼玉県・千葉県・東京都・神奈川県</p>
-  </div>
-  <div class="tab-pane" id="chuubu">
-    <p>新潟県・富山県・石川県・福井県・山梨県・長野県・岐阜県・静岡県・愛知県</p>
-  </div>
-</div> -->
-
-
-
-
-
-<!-- <div class="row select-bar align-items-center justify-content-center">
-  <aside class="col-md-4 select-bar">
-    <ul class="nav nav-tabs">
-      <li class="active"><a href="#toukou" data-toggle="tab">自分の投稿</a></li>
-      <a class="nav-link active">自分の投稿</a>
-    </li>
-  </ul>
-  </aside>
-
-  <aside class="col-md-4 select-bar">
-    <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link">お気に入り</a>
-    </li>
-  </ul>
-  </aside>
-</div> -->

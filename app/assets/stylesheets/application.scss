@@ -52,13 +52,8 @@ body {
   background-color: #fed500 !important;
 }
 
-.like-btn {
-  width: 25px;
-  height: 30px;
-  font-size: 25px;
-  color: #808080;
-  margin-left: 0px;
-  float: left;
+.card {
+  border: none;
 }
 
 .card-title {
@@ -68,12 +63,13 @@ body {
 
 .card-body {
   padding: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.card-footer {
-  background-color: white;
-  border-top: 0px;
-}
+// .card-footer {
+//   background-color: white;
+//   border-top: 0px;
+// }
 
 .text-white {
   color: #000000 !important;
@@ -93,6 +89,12 @@ body {
     padding: 0 18px;
     border-radius: 100px;
     font-weight: bold;
+ }
+
+ .like-link {
+   display: flex;
+   margin-left: 10px;
+   margin-bottom: 5px;
  }
 
 // ログイン画面
