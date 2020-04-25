@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   def index
     @jiros = Jiro.all
-    @jiros = Jiro.page(params[:page]).per(8)
+    @jpage = Jiro.page(params[:page]).per(8)
   end
 
   def new
@@ -16,8 +16,8 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @jiros = Jiro.all
-    @jiros = Jiro.page(params[:page]).per(8)
-    @jiro = Jiro.find_by(user_id: current_user.id)
+    @jiro = Jiro.where(user_id: params[:id])
+    @jpage = Jiro.page(params[:page]).per(8)
 
   end
 

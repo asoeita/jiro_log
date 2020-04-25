@@ -34,7 +34,7 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane active" id="toukou">
-          <% @jiros.each do |jiro| %>
+          <% @jiro.each do |jiro| %>
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="card-body">
 
@@ -42,7 +42,7 @@
                 <%= image_tag jiro.picture.url, :size => '245x200' %>
                   <h4 class="card-title">
                     <% if jiro.store_id %>
-                      <%= Store.find_by_id(@jiro.store_id)&.name %>
+                      <%= Store.find_by_id(jiro.store_id)&.name %>
                     <% else %>
                       <%= "店舗情報なし" %>
                     <% end %>
