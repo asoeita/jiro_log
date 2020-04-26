@@ -16,12 +16,15 @@
       <%= button_to 'プロフィール編集', profile_edit_path, method: :get, class: "btn btn-primary btn-outline-primary btn-round" %>
     </aside>
   </div>
+
   <div class="row align-items-center justify-content-center">
     <aside class="col-md-12">
       <span class="introduction"><%= @user.introduction %></span>
     </aside>
   </div>
-  <hr width="80%">
+
+  <hr width="100%">
+
   <div class="row select-bar align-items-center justify-content-center">
     <aside class="col-md-12 select-bar">
       <ul class="nav nav-pills nav-justified">
@@ -32,12 +35,13 @@
           <a href="#okiniiri" class="nav-link" data-toggle="tab">お気に入り</a>
         </li>
       </ul>
+
       <div class="tab-content">
         <div class="tab-pane active" id="toukou">
-          <% @jiro.each do |jiro| %>
+          <div class="row text-center">
+          <% @jiros.each do |jiro| %>
             <div class="col-lg-3 col-md-6 mb-4">
               <div class="card-body">
-
               <%= link_to jiro, class: "card" do %>
                 <%= image_tag jiro.picture.url, :size => '245x200' %>
                   <h4 class="card-title">
@@ -53,9 +57,32 @@
               </div>
           <% end %>
         </div>
-        <div class="tab-pane" id="okiniiri">
-          <p>テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</p>
+          <%= paginate @jiros %>
         </div>
+
+        <div class="tab-pane" id="okiniiri">
+          <!-- <div class="tab-pane active" id="toukou"> -->
+            <div class="row text-center">
+            <% @favorites.each do |jiro| %>
+              <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card-body">
+                <%= link_to jiro, class: "card" do %>
+                  <%= image_tag jiro.picture.url, :size => '245x200' %>
+                    <h4 class="card-title">
+                      <% if jiro.store_id %>
+                        <%= Store.find_by_id(jiro.store_id)&.name %>
+                      <% else %>
+                        <%= "店舗情報なし" %>
+                      <% end %>
+                    </h4>
+                  <% end %>
+                  <%= render partial: 'jiros/jiros', locals: { jiro: jiro } %>
+                </div>
+                </div>
+            <% end %>
+          </div>
+            <%= paginate @favorites %>
+          </div>
       </div>
     </aside>
   </div>
