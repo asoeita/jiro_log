@@ -28,6 +28,7 @@ gem 'devise-i18n-views'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
+  gem 'rb-readline'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
 end

@@ -12,6 +12,7 @@ class JirosController < ApplicationController
   end
 
   def create
+    @user = current_user
     @jiro = @user.jiros.build(jiro_params)
     if @jiro.save
       flash[:success] = "投稿しました"
