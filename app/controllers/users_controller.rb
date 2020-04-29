@@ -4,8 +4,14 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @jiros = Jiro.all.order(created_at: :desc)
+    # if params[:option] == "A" || params[:option] == nil
+    #   @jiros = Jiro.all.order('created_at DESC')
+    # elsif params[:option] == "B"
+    #   @jiros = Jiros.all.order('created_at ASC')
+    # end
+    @jiros = Jiro.all
     @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
+    @jiros_rank = Jiro.all.order(favorites_count: "DESC")
     # @user = @user || User.find_by(id: session[:user_id])
     @user = current_user
   end
