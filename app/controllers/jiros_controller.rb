@@ -22,11 +22,27 @@ class JirosController < ApplicationController
     end
   end
 
+  # def search
+  #   if params[:q].present?
+  #     #検索フォームからアクセスしたときの処理
+  #     @search = Jiro.ransack(search_params)
+  #     @jiros = @search.result
+  #   else
+  #     params[:q] = { sorts: 'id desc' }
+  #     @search = Jiro.ransack()
+  #     @jiros = Jiro.all
+  #   end
+  # end
 
   private
     #ストロングパラメーター
     def jiro_params
-      params.require(:jiro).permit(:picture, :store_id, :weather, :date, :waiting_time, :call, :pork, :soup, :comment)
+      params.require(:jiro).permit(:picture, :store_id, :weather, :date, :waiting_time, :call, :pork, :soup, :comment, :favorites_count)
     end
+
+
+    # def search_params
+    #   params.require(:q).permit(:sorts)
+    # end
 
 end

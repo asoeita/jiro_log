@@ -7,8 +7,14 @@ Rails.application.routes.draw do
     patch 'profile_update/:id', to: 'users/registrations#profile_update', as: 'profile_update'
   end
   root 'users#index'
-  resources :users
+  resources :users do
+    collection do
+      match 'search' => 'users#search', via: [:get, :post]
+    end
+  end
+
   resources :jiros
+
   resources :favorites, only: [:create, :destroy]
 
   #いいね機能

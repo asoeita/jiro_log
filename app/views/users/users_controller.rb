@@ -14,21 +14,17 @@ class UsersController < ApplicationController
     # @jiros_rank = Jiro.all.order(favorites_count: "DESC")
     # @user = @user || User.find_by(id: session[:user_id])
     @user = current_user
+    if params[:q].present?
+      #検索フォームからアクセスしたときの処理
+      @search = Jiro.ransack(search_params)
+      @jiros_rank = @search.result
+    else
+      #検索フォーム以外からアクセスしたときの処理
+      params[:q] = { sorts: 'id desc' }
+      @search = Jiro.ransack()
+      @jiross = Jiro.all
+    end
   end
-    # if params[:q] == { sorts: 'updated_at_desc' }
-    #   #検索フォームからアクセスしたときの処理
-    #   @q = Jiro.ransack(search_params)
-    #   @search = @q.result
-    #   @jiros = Jiro.all
-    #   @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
-    # elsif params[:q] == { sorts: 'favorites_count_desc' }
-    #   #検索フォーム以外からアクセスしたときの処理
-    #   @q = Jiro.ransack()
-    #   @jiros = Jiro.all
-    #   @jiros = Jiro.page(params[:page]).per(8).order(favorites_count: :desc)
-
-    # end
-  # end
 
   def new
   end
@@ -50,16 +46,6 @@ class UsersController < ApplicationController
   end
 
   def search
-    @jiros = Jiro.all
-    @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
-    if params[:hoge] == "1"
-      @jiros = Jiro.all
-      @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
-    elsif params[:hoge] == "2"
-      @jiros = Jiro.all
-      @jiros = Jiro.page(params[:page]).per(8).order(favorites_count: :desc)
-    end
-    render :index
   #   if params[:hoge] == 1
   #     @jiros = Jiro.all
   #     @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
