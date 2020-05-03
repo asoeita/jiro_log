@@ -6,14 +6,14 @@ Rails.application.routes.draw do
     get  'profile_edit/:id', to: 'users/registrations#profile_edit', as: 'profile_edit'
     patch 'profile_update/:id', to: 'users/registrations#profile_update', as: 'profile_update'
   end
-  root 'users#index'
-  resources :users do
+  root 'jiros#index'
+  resources :users
+
+  resources :jiros do
     collection do
-      match 'search' => 'users#search', via: [:get, :post]
+      match 'search' => 'jiros#search', via: [:get, :post]
     end
   end
-
-  resources :jiros
 
   resources :favorites, only: [:create, :destroy]
 

@@ -18,9 +18,3 @@
 //= require bootstrap-sprockets
 //= require dropzone
 //= require_tree .
-
-// <script type="text/javascript">
-//     function myfunc(value) {
-//       window.location.replace('/?option=' + value);
-//     }
-// </script>

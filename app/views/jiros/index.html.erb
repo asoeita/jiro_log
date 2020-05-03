@@ -8,16 +8,22 @@
 
   <div class="top-page-container">
 <h1>みんなの投稿</h1>
-<%= form_tag(search_users_path, method: "get") do %>
-  <%= select_tag :hoge, options_for_select([["並び替え", "0"],["新着順", "1"], ["いいね順", "2"]]) %>
-  <%= submit_tag "絞り込み" %>
+<%= search_form_for(@q, url:search_jiros_path, method: "get") do |f| %>
+    <%= f.label :call_cont %>
+    <%= f.search_field :call_cont %>
+    <%= f.submit %>
+<% end %>
+
+<%= form_tag(search_jiros_path, method: "get") do %>
+  <%= select_tag :hoge, options_for_select([["新着順", "1"], ["いいね順", "2"]]) %>
+  <%= submit_tag "並び替え" %>
 <% end %>
 <!-- <div class="search_field">
 </div> -->
     <!-- Page Features -->
     <div class="row text-center">
 
-    <% @jiros.each do |jiro| %>
+    <% @result.each do |jiro| %>
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card-body">
 
@@ -43,7 +49,7 @@
   </div>
 
     <!-- <div class="row text-center"> -->
-      <%= paginate @jiros %>
+      <%= paginate @result %>
     <!-- </div> -->
 
 

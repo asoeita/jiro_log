@@ -3,18 +3,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :show]
 
-  def index
-    # if params[:option] == "A" || params[:option] == nil
-    #   @jiros = Jiro.all.order('created_at DESC')
-    # elsif params[:option] == "B"
-    #   @jiros = Jiros.all.order('created_at ASC')
-    # end
-    @jiros = Jiro.all
-    @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
-    # @jiros_rank = Jiro.all.order(favorites_count: "DESC")
-    # @user = @user || User.find_by(id: session[:user_id])
-    @user = current_user
-  end
     # if params[:q] == { sorts: 'updated_at_desc' }
     #   #検索フォームからアクセスしたときの処理
     #   @q = Jiro.ransack(search_params)
@@ -49,17 +37,6 @@ class UsersController < ApplicationController
     @favorites = Kaminari.paginate_array(@favorites).page(params[:page]).per(8)
   end
 
-  def search
-    @jiros = Jiro.all
-    @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
-    if params[:hoge] == "1"
-      @jiros = Jiro.all
-      @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
-    elsif params[:hoge] == "2"
-      @jiros = Jiro.all
-      @jiros = Jiro.page(params[:page]).per(8).order(favorites_count: :desc)
-    end
-    render :index
   #   if params[:hoge] == 1
   #     @jiros = Jiro.all
   #     @jiros = Jiro.page(params[:page]).per(8).order(created_at: :desc)
@@ -79,7 +56,7 @@ class UsersController < ApplicationController
     #   @search = Jiro.ransack()
     #   @jiros = Jiro.all
     # end
-  end
+  # end
 
 
 
