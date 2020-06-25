@@ -18,8 +18,8 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 gem 'ransack'
-gem 'sass-rails', '~> 5.0'
-gem 'mysql2'
+gem 'sassc-rails'
+gem 'sqlite3', '~> 1.3.6'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
@@ -43,7 +43,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'selenium-webdriver'
 end
 
