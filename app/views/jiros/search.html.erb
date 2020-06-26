@@ -1,0 +1,56 @@
+<!-- <head> -->
+
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  <!-- <meta name="description" content="">
+  <meta name="author" content=""> -->
+
+<!-- </head> -->
+
+  <div class="top-page-container">
+<h1>みんなの投稿</h1>
+<%= search_form_for(@q, url:search_jiros_path, method: "get") do |f| %>
+    <%= f.label :call_cont %>
+    <%= f.search_field :call_cont %>
+    <%= f.submit %>
+<% end %>
+
+<%= form_tag(search_jiros_path, method: "get") do %>
+  <%= select_tag :hoge, options_for_select([["新着順", "1"], ["いいね順", "2"]]) %>
+  <%= submit_tag "絞り込み" %>
+<% end %>
+<!-- <div class="search_field">
+</div> -->
+    <!-- Page Features -->
+    <div class="row text-center">
+
+    <% @result.each do |jiro| %>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card-body">
+
+        <%= link_to jiro, class: "card" do %>
+          <%= image_tag jiro.picture.url, :size => '245x200' %>
+            <h4 class="card-title">
+              <% if jiro.store_id %>
+                <%= Store.find_by_id(jiro.store_id)&.name %>
+              <% else %>
+                <%= "店舗情報なし" %>
+              <% end %>
+            </h4>
+            <!-- <div class="card-footer"> -->
+            <!-- </div> -->
+
+          <!-- </div> -->
+          <% end %>
+          <%= render partial: 'jiros/jiros', locals: { jiro: jiro } %>
+        </div>
+        </div>
+    <% end %>
+
+  </div>
+
+    <!-- <div class="row text-center"> -->
+      <%= paginate @result %>
+    <!-- </div> -->
+
+
+  </div>
