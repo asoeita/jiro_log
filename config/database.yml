@@ -17,5 +17,8 @@
   production:
     <<: *default
     database: jiro_log_production
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
    # username: hogehoge
    # password: <%= ENV['jiro_log_DATABASE_PASSWORD'] %>
