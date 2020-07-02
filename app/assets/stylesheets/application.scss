@@ -189,18 +189,21 @@ table td{
     width: 50%;
     height: 45px;
     border: none;
+    background-color: aliceblue;
   }
 
   #jiro_date_1i, #jiro_date_2i, #jiro_date_3i, #jiro_date_4i, #jiro_date_5i {
     width: 15%;
     height: 45px;
     border: none;
+    background-color: aliceblue;
   }
 
   #jiro_waiting_time_4i, #jiro_waiting_time_5i {
     width: 25%;
     height: 45px;
     border: none;
+    background-color: aliceblue;
   }
 }
 
@@ -249,6 +252,7 @@ aside {
 
 .btn.btn-primary.btn-outline-primary.btn-round {
   float: right;
+  color: white;
 }
 
 hr {

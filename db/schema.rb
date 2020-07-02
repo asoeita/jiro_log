@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_103306) do
+ActiveRecord::Schema.define(version: 2020_07_01_140005) do
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_04_24_103306) do
     t.string "picture"
     t.string "weather"
     t.datetime "date"
-    t.time "waiting_time"
     t.string "call"
     t.string "pork"
     t.string "soup"
@@ -36,6 +35,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_103306) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "favorites_count"
+    t.datetime "waiting_time"
   end
 
   create_table "stores", force: :cascade do |t|
